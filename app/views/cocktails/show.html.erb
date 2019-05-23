@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <div class="row d-flex justify-content-center m-3 p-5">
+    <div class="col col-md-auto p-5">
+      <h1><u>Cocktails</u></h1>
+            <%= @cocktail.name %>
+            <% @cocktail.ingredients.each do |ingredient| %>
+            <% @cocktail.doses.each do |dose| %>
+              <p><%= ingredient.name %> | <%= dose.description %></p>
+              <% end %>
+              <% end %>
+            <div class="dropdown-divider"></div>
+        <p><a class="btn btn-info btn-add" href="/cocktails/:id/doses/new">Add a dose</a> | <%= link_to "Home", cocktails_path %></p>
+    </div>
+  </div>
+</div>
