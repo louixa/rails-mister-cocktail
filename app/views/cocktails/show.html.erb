@@ -5,11 +5,13 @@
             <%= @cocktail.name %>
             <% @cocktail.ingredients.each do |ingredient| %>
             <% @cocktail.doses.each do |dose| %>
-              <p><%= ingredient.name %> | <%= dose.description %></p>
+              <p><%= dose.ingredient.name %> | <%= dose.description %> | <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
+                  <i class="fa fa-trash destroy_dose"></i></p>
+              <% end %>
               <% end %>
               <% end %>
             <div class="dropdown-divider"></div>
-        <p><a class="btn btn-info btn-add" href="/cocktails/:id/doses/new">Add a dose</a> | <%= link_to "Home", cocktails_path %></p>
+        <p><%= link_to "Add a dose", new_cocktail_dose_path(@cocktail), class: 'btn btn-info' %> | <%= link_to "Home", cocktails_path %></p>
     </div>
   </div>
 </div>

@@ -3,12 +3,10 @@
     <div class="col col-md-auto p-5">
       <h1><u>Cocktails</u></h1>
       <% @cocktails.each do |cocktail| %>
-        <% cocktail.ingredients.each do |ingredient| %>
-         <% cocktail.doses.each do |dose| %>
-          <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
+          <p><%= link_to cocktail.name, cocktail_path(cocktail) %> | <%= link_to cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" } do %>
+                  <i class="fa fa-trash destroy_cocktail"></i></p>
           <% end %>
-        <% end %>
-      <% end %>
+          <% end %>
         <div class="dropdown-divider"></div>
         <p><%= link_to "Add a cocktail", new_cocktail_path, class: 'btn btn-info' %></p>
     </div>
