@@ -29,12 +29,13 @@
 </div>
 
 <div class="container">
-  <center><h1><u>Cocktails</u></h1></center>
+  <center><h1><u>Current Cocktails</u></h1></center>
   <div class="row">
     <% @cocktails.each do |cocktail| %>
       <div class="col-4">
-        <p><%= cl_image_tag cocktail.photo, height: 300, width: 400, crop: :fill %></p>
-
+        <div class="rounded">
+        <p><%= cl_image_tag cocktail.photo, height: 260, width: 360 %></p>
+        </div>
           <span class="caption">
             <%= link_to cocktail.name, cocktail_path(cocktail) %> | <%= link_to cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" } do %><i class="fa fa-trash destroy_cocktail"></i>
             <% end %>
