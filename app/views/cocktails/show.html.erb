@@ -2,6 +2,7 @@
   <div class="row d-flex justify-content-center m-3 p-5">
     <div class="col col-md-auto p-5">
       <h1><u>Cocktails</u></h1>
+            <p><%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %></p>
             <%= @cocktail.name %>
             <% @cocktail.ingredients.each do |ingredient| %>
             <% @cocktail.doses.each do |dose| %>
