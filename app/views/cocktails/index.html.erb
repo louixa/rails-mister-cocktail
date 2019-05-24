@@ -1,4 +1,33 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <a class="navbar-brand" href="#">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
+</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Messages</a>
+      </li>
+      <li class="nav-item dropdown">
+        <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="#" />
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.imgur.com/7MUbXzt.jpg);">
   <div class="container">
     <h1>Cock-a-doodle-doo!</h1>
     <p>Change your life and learn to code.</p>
@@ -7,12 +36,12 @@
 </div>
 
   <div class="row">
-    <div class="col-sm-4">
-      <h1><u>Cocktails</u></h1>
+    <div class="col-sm">
+      <center><h1><u>Cocktails</u></h1></center>
     </div>
   </div>
     <div class="row">
-    <div class="col-sm-4">
+    <div class="col-sm">
       <% @cocktails.each do |cocktail| %>
       <p><%= cl_image_tag cocktail.photo, height: 300, width: 400, crop: :fill %></p>
           <p><%= link_to cocktail.name, cocktail_path(cocktail) %> | <%= link_to cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" } do %>
