@@ -1,0 +1,50 @@
+<!-- <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <a class="navbar-brand" href="#">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
+</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button> -->
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Messages</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.imgur.com/7MUbXzt.jpg);">
+  <div class="container">
+    <h1>Cock-a-doodle-doo!</h1>
+    <p>Change your life and learn to code.</p>
+    <a class="btn btn-info" href="/cocktails/new">Add a cocktail</a>
+  </div>
+</div> -->
+
+<div class="container">
+  <center><h1><u>Current Cocktails</u></h1></center>
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-4">
+        <div class="rounded">
+        <p><%= cl_image_tag cocktail.photo, height: 260, width: 360 %></p>
+        </div>
+          <span class="caption">
+            <%= link_to cocktail.name, cocktail_path(cocktail) %> | <%= link_to cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" } do %><i class="fa fa-trash destroy_cocktail"></i>
+            <% end %>
+          </span>
+        </p>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+

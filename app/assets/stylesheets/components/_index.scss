@@ -1,11 +1,18 @@
 // Import your components CSS files here.
 @import "alert";
-@import "avatar";
-@import "navbar";
+
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.container {
+  padding: 20px;
+}
 
 .cards {
   display: grid;
-  }
+}
 
 .caption {
     display: block;
@@ -14,7 +21,7 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  padding: 120px 0;
 }
 
 .banner h1 {
