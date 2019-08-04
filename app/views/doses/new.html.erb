@@ -1,11 +1,11 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
-      <h1>Create a new dose</h1>
+      <h1>Add Details</h1>
       <%= simple_form_for [@cocktail, @dose] do |f| %>
-      <%= f.association :ingredient, input_html: { class: "beautiful-dropdown" }, include_hidden: false %>
-      <%= f.input :description %>
-      <%= f.button :submit, class: 'btn btn-info' %>
+      <%= f.association :ingredient, label: 'Cocktail Color', input_html: { class: "beautiful-dropdown" }, include_hidden: false %>
+      <%= f.input :description, placeholder: 'Describe this fellow bird.' %>
+      <%= f.button :submit, 'Submit', class: 'btn btn-info' %>
       <% end %>
         <div class="dropdown-divider"></div>
       <p><%= link_to "Back to list", cocktails_path %></p>
